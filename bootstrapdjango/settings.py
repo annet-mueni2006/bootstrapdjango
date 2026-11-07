@@ -23,13 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mhd+nln(8m@)i#%@cew-(7-c224f#8wv#xzghthy258dn6d7nv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+import os
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '.onrender.com',
-]
+ALLOWED_HOSTS = ["bootstrapdjango-y3ee.onrender.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
